@@ -1,0 +1,11 @@
+<link
+  href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+  rel="stylesheet"
+/>
+
+<div class="main-container">
+  <h1 class="main-title">Fantagazzettabile</h1>
+  <p class="date">{{ today | date : "EEEE, d MMMM y" }}</p>
+  <app-prima-pagina></app-prima-pagina>
+  <router-outlet></router-outlet>
+</div>

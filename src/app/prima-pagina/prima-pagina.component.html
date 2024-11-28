@@ -1,0 +1,21 @@
+<div class="header">
+  <h1 class="title animate-title">Tredicesima Giornata</h1>
+  <p class="tagline">Perla dell'allenatore:</p>
+  <app-aforismi></app-aforismi>
+</div>
+
+<section class="main-articles">
+  <article *ngFor="let article of articles" class="news-article">
+    <div class="article-content">
+      <h2 class="article-title">{{ article.title }}</h2>
+      <img
+        [src]="article.image"
+        alt="Immagine del match"
+        class="article-image"
+      />
+      <span class="article-tag">{{ article.tag }}</span>
+      <p class="article-text">{{ article.content }}</p>
+      <p class="article-subtitle">{{ article.subtitle }}</p>
+    </div>
+  </article>
+</section>

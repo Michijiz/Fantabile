@@ -1,0 +1,157 @@
+:root {
+  --primary-color: #004d7a;
+  --secondary-color: #00bf72;
+  --accent-color: #f04e30;
+  --text-light: #ffffff;
+  --text-dark: #333;
+  --text-gray: #555;
+  --pixel-font: "Press Start 2P", sans-serif; /* Font retro pixelato */
+}
+
+body {
+  font-family: var(--pixel-font), monospace; /* Impostiamo il font retro per il corpo */
+  background-color: #e495c7; /* Sfondo scuro per richiamare l'effetto retro */
+  color: var(--text-ligt);
+}
+
+.header {
+  text-align: center;
+  background: linear-gradient(
+    135deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
+  color: var(--text-light);
+  padding: 2rem 1.25rem;
+  border-bottom: 3px solid var(--accent-color); /* Bordo meno fine e più visibile */
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Ombra più marcata */
+  font-family: var(--pixel-font), monospace; /* Font retro anche per l'intestazione */
+}
+
+.title {
+  font-size: 3rem;
+
+  font-weight: bold;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem; /* Maggiore spaziatura tra le lettere */
+  animation: fadeIn 2s ease-in-out;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Aggiunto un'ombra più marcata per l'effetto retro */
+}
+
+.tagline {
+  font-size: 1.2rem;
+  font-style: italic;
+  margin: 0.625rem 0;
+  opacity: 0.8;
+}
+
+.date {
+  font-size: 1rem;
+  margin-top: 0.3125rem;
+  color: rgba(13, 1, 1, 0.8);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-1.25rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.main-articles {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(18.75rem, 1fr));
+  gap: 1.25rem;
+  margin: 1.25rem auto;
+  max-width: 75rem;
+  padding: 0 1rem;
+}
+
+.news-article {
+  background: var(--text-light);
+  border-radius: 0.625rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: all 0.3s ease;
+  border: 3px solid var(--accent-color); /* Bordo più spesso e visibile */
+  font-family: var(--pixel-font), monospace;
+}
+
+.news-article:hover {
+  transform: translateY(-0.625rem);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.article-image {
+  width: 100%;
+  height: 12.5rem;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.news-article:hover .article-image {
+  transform: scale(1.05);
+}
+
+.article-content {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: calc(100% - 12.5rem);
+}
+
+.article-title {
+  font-size: 1.5rem;
+  color: #e495c7;
+  margin: 0.625rem 0;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.article-subtitle {
+  font-style: italic;
+  color: var(--text-gray);
+  margin-bottom: 0.625rem;
+}
+
+.article-tag {
+  display: inline-block;
+  background: var(--accent-color);
+  color: var(--text-light);
+  padding: 0.3125rem 0.625rem;
+  border-radius: 0.3125rem;
+  font-size: 0.9rem;
+  margin: 0.625rem 0 4rem;
+
+  align-self: flex-start;
+  text-transform: uppercase;
+}
+
+.article-text {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--text-dark);
+}
+
+@media (max-width: 768px) {
+  .main-articles {
+    grid-template-columns: 1fr;
+  }
+
+  .header {
+    padding: 1rem;
+  }
+
+  .title {
+    font-size: 0.5rem;
+  }
+}

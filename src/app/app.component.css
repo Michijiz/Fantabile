@@ -1,0 +1,80 @@
+:root {
+  --primary-color: #004d7a;
+  --text-gray: #0c0101;
+  --background-light: #1d0101;
+}
+
+body {
+  font-family: "Arial", sans-serif;
+  background-color: #95e4df;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+.main-title {
+  text-align: center;
+  font-size: 3.5vw;
+  margin: 1.25rem 0;
+  color: #090006;
+  text-transform: uppercase;
+
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+@media (max-width: 768px) {
+  .title {
+    font-size: 5vw; /* Adatta il titolo alla larghezza dello schermo */
+    line-height: 1.2; /* Riduce lo spazio verticale tra le righe */
+  }
+
+  .tagline,
+  .date {
+    font-size: 3vw; /* Riduci la dimensione dei sottotitoli */
+  }
+
+  .main-articles {
+    grid-template-columns: 1fr; /* Un'unica colonna */
+    gap: 20px; /* Diminuisci lo spazio tra gli articoli */
+  }
+
+  .news-article {
+    padding: 10px; /* Riduci la spaziatura interna */
+  }
+
+  .article-title {
+    font-size: vw; /* Riduci il titolo negli articoli */
+  }
+
+  .article-text {
+    font-size: 3vw; /* Adatta il testo principale */
+  }
+}
+
+.subheading {
+  text-align: center;
+  font-style: italic;
+  color: var(--text-gray);
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+.main-container {
+  margin: 0 auto;
+  width: 90%;
+  max-width: 1200px;
+  background-color: #e495c7(231, 124, 124);
+  padding: 2rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 0.625rem;
+}
+
+@media (max-width: 768px) {
+  .main-title {
+    font-size: 5vw;
+  }
+
+  .main-container {
+    width: 95%;
+    padding: 1rem;
+  }
+}
